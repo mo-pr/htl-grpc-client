@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "info.unterrainer.htl.htlgrpcclient.protos";
+option java_outer_classname = "JsonataProtos";
+option objc_class_prefix = "JSS";
+
+package overmindjsonata4javaserver;
+
+service Jsonata {
+  // Sends a greeting
+  rpc evaluate (QueryData) returns (QueryResult) {}
+}
+
+message QueryData {
+  string query = 1;
+  string json = 2;
+}
+
+message QueryResult {
+  bool value = 1;
+}
